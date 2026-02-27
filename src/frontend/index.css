@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* CubeGuide Dark Theme — always dark */
+    --background: 0.12 0.005 260;
+    --foreground: 0.96 0.005 260;
+    --card: 0.16 0.006 260;
+    --card-foreground: 0.96 0.005 260;
+    --popover: 0.16 0.006 260;
+    --popover-foreground: 0.96 0.005 260;
+    --primary: 0.96 0.005 260;
+    --primary-foreground: 0.12 0.005 260;
+    --secondary: 0.22 0.008 260;
+    --secondary-foreground: 0.96 0.005 260;
+    --muted: 0.20 0.006 260;
+    --muted-foreground: 0.58 0.010 260;
+    --accent: 0.24 0.010 260;
+    --accent-foreground: 0.96 0.005 260;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.28 0.008 260;
+    --input: 0.22 0.008 260;
+    --ring: 0.60 0.010 260;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.14 0.005 260;
+    --sidebar-foreground: 0.96 0.005 260;
+    --sidebar-primary: 0.96 0.005 260;
+    --sidebar-primary-foreground: 0.12 0.005 260;
+    --sidebar-accent: 0.20 0.006 260;
+    --sidebar-accent-foreground: 0.96 0.005 260;
+    --sidebar-border: 0.28 0.008 260;
+    --sidebar-ring: 0.60 0.010 260;
+
+    /* Cube Colors — raw values for inline usage */
+    --cube-white: #F5F5F0;
+    --cube-red: #C41E3A;
+    --cube-blue: #0051A8;
+    --cube-orange: #FF6B1A;
+    --cube-yellow: #FFD600;
+    --cube-green: #009B48;
+    --cube-empty: #1e2235;
+  }
+
+  .dark {
+    --background: 0.12 0.005 260;
+    --foreground: 0.96 0.005 260;
+    --card: 0.16 0.006 260;
+    --card-foreground: 0.96 0.005 260;
+    --popover: 0.16 0.006 260;
+    --popover-foreground: 0.96 0.005 260;
+    --primary: 0.96 0.005 260;
+    --primary-foreground: 0.12 0.005 260;
+    --secondary: 0.22 0.008 260;
+    --secondary-foreground: 0.96 0.005 260;
+    --muted: 0.20 0.006 260;
+    --muted-foreground: 0.58 0.010 260;
+    --accent: 0.24 0.010 260;
+    --accent-foreground: 0.96 0.005 260;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 0.28 0.008 260;
+    --input: 0.22 0.008 260;
+    --ring: 0.60 0.010 260;
+    --sidebar: 0.14 0.005 260;
+    --sidebar-foreground: 0.96 0.005 260;
+    --sidebar-primary: 0.488 0.243 264.376;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.20 0.006 260;
+    --sidebar-accent-foreground: 0.96 0.005 260;
+    --sidebar-border: 0.28 0.008 260;
+    --sidebar-ring: 0.439 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  code, .mono {
+    font-family: 'Space Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.03em;
+  }
+  .font-mono-custom {
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Cube color glow effects */
+  .glow-white { box-shadow: 0 0 12px rgba(245,245,240,0.35); }
+  .glow-red { box-shadow: 0 0 12px rgba(196,30,58,0.55); }
+  .glow-blue { box-shadow: 0 0 12px rgba(0,81,168,0.55); }
+  .glow-orange { box-shadow: 0 0 12px rgba(255,107,26,0.55); }
+  .glow-yellow { box-shadow: 0 0 12px rgba(255,214,0,0.55); }
+  .glow-green { box-shadow: 0 0 12px rgba(0,155,72,0.55); }
+
+  /* Animated gradient noise background */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  .cube-cell-empty {
+    background-color: var(--cube-empty);
+    border: 1.5px solid rgba(255,255,255,0.08);
+  }
+
+  .step-enter {
+    animation: stepEnter 0.3s ease-out forwards;
+  }
+
+  @keyframes stepEnter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .tab-active-indicator {
+    position: relative;
+  }
+  .tab-active-indicator::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: oklch(var(--primary));
+    border-radius: 1px;
+  }
+
+  .algo-chip {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    padding: 2px 8px;
+    color: oklch(0.85 0.010 260);
+    letter-spacing: 0.05em;
+  }
+}
